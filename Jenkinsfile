@@ -17,11 +17,6 @@ pipeline {
             echo output
          }
       }
-	  stage('update') {
-		  steps {
-			  sh 'sudo apt-get update && sudo apt-get upgrade'
-		  }
-	  }
 	  stage('build') {
 		  steps {
 			  sh 'python3 --version'
