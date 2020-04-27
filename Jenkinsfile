@@ -20,6 +20,8 @@ pipeline {
 	  stage('update') {
 		  steps {
 			  sh 'apt-get update && apt-get upgrade'
+		  }
+	  }
 	  stage('build') {
 		  steps {
 			  sh 'python3 --version'
