@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 fibSeq = [0,1] 
   
 def fib(n): 

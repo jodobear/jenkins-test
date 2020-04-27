@@ -19,8 +19,8 @@ pipeline {
       }
 	  stage('build') {
 		  steps {
-			  sh 'python --version'
-			  sh 'python ./fib.py'
+			  sh 'python3 --version'
+			  sh 'python3 ./fib.py'
 		  }
 	  }
    }
