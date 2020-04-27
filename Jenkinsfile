@@ -2,7 +2,7 @@ def output
 
 pipeline {
     
-   agent any
+   agent { docker { image 'python:3.7.7-slim' } }
 
    stages {
       stage('Hello') {
@@ -17,6 +17,9 @@ pipeline {
             echo output
          }
       }
+	  stage('update') {
+		  steps {
+			  sh 'apt-get update && apt-get upgrade'
 	  stage('build') {
 		  steps {
 			  sh 'python3 --version'
