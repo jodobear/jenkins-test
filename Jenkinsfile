@@ -19,7 +19,7 @@ pipeline {
       }
 	  stage('update') {
 		  steps {
-			  sh 'apt-get update && apt-get upgrade'
+			  sh 'sudo apt-get update && sudo apt-get upgrade'
 		  }
 	  }
 	  stage('build') {
