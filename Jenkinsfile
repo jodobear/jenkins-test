@@ -2,29 +2,26 @@ def output
 
 pipeline {
     
-   agent any
-   tools {
-	   go { 'go-1.2' }
-   }
+   agent { docker { image 'python:3.7.7-slim' } }
 
    stages {
-      stage('Build') {
+      stage('Hello') {
          steps {
              script {
-                 sh 'go build' 
+                 output = sh label: '', returnStdout: true, script: 'echo "Hello, World"'
              }
          }
       }
-   }      
-} 
-    
-   
-  
-
-
-
-
-
-
-
-
+      stage('echo') {
+         steps {
+            echo output
+         }
+      }
+	  stage('build') {
+		  steps {
+			  sh 'python3 --version'
+			  sh 'python3 ./fib.py'
+		  }
+	  }
+   }
+}
